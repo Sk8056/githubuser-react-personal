@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Card from "./Card";
 import Followers from "./Followers";
 const User = () => {
+  console.log("Users rendered");
   return (
     <section className="section">
       <Wrapper className="section-center">

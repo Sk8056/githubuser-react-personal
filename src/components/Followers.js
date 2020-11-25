@@ -5,6 +5,8 @@ import styled from "styled-components";
 const Followers = () => {
   const { followers } = React.useContext(GithubContext);
 
+  console.log("Follower rendered");
+
   return (
     <Wrapper>
       <div className="followers">

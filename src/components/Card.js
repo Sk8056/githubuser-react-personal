@@ -16,6 +16,8 @@ const Card = () => {
     twitter_username,
   } = githubUser;
 
+  console.log("Card rendered");
+
   return (
     <Wrapper>
       <header>
