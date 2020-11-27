@@ -17,26 +17,21 @@ const GithubProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState({ show: false, msg: "" });
 
-  console.log("context rendered");
+  console.log("context rendered", isLoading);
 
   const searchGithubUser = async (user) => {
-    console.log("searchGithubUsers called");
     toggleError();
     setIsLoading(true);
-    console.log("searchGithubUsers called and api about to call");
 
     const response = await axios(`${rootUrl}/users/${user}`).catch((err) =>
       console.log(err.message)
     );
-    console.log("searchGithubUsers called and api also called");
     if (response) {
       setGithubUser(response.data);
       console.log("Got response");
     } else {
       toggleError(true, "There is no user with that username");
     }
-
-    console.log("searchGithubUsers ended");
   };
 
   //destructuring the response and getting only data by writing {data}
